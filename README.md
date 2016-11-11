@@ -5,18 +5,19 @@ This example is an adapted version taken from [ibm-messaging](https://github.com
 
 # Steps
 
-1. Clone the example
+1\. Clone the example
 ```
 git clone https://github.com/ibm-rtvs/mq-docker.git
 ```
-1. Make changes as necessary
-1. Build the image
+2\. Make changes as necessary
+
+3\. Build the image
 ```
 cd mq-docker
 wget http://localhost:7819/RTCP/rest/tools/IBM/WebSphereMQ/dist/IBMWebSphereMQdist.zip
 docker build -t mq-docker .
 ```
-1. Execute the image
+4\. Execute the image
 ```
 docker run -d -e LICENSE=accept -e MQ_QMGR_NAME=QM1 -p 1414:1414 mq-docker
 ```
