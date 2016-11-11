@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Mq-docker : A sample demonstrating how to build an MQ Broker docker image containing the RTVS MQ Exit for message interception">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mq-docker</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ibm-rtvs/mq-docker">View on GitHub</a>
+
+          <h1 id="project_title">Mq-docker</h1>
+          <h2 id="project_tagline">A sample demonstrating how to build an MQ Broker docker image containing the RTVS MQ Exit for message interception</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ibm-rtvs/mq-docker/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ibm-rtvs/mq-docker/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="mq-docker" class="anchor" href="#mq-docker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mq-docker</h1>
+
+<p>A sample demonstrating how to build an MQ Broker docker image containing the RTVS MQ Exit for message interception.</p>
+
+<p>This example is an adapted version taken from <a href="https://github.com/ibm-messaging/mq-docker">ibm-messaging</a>.</p>
+
+<h1>
+<a id="steps" class="anchor" href="#steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps</h1>
+
+<p>1. Clone the example</p>
+
+<pre><code>git clone https://github.com/ibm-rtvs/mq-docker.git
+</code></pre>
+
+<p>2. Make changes as necessary</p>
+
+<p>3. Build the image</p>
+
+<pre><code>cd mq-docker
+wget http://localhost:7819/RTCP/rest/tools/IBM/WebSphereMQ/dist/IBMWebSphereMQdist.zip
+docker build -t mq-docker .
+</code></pre>
+
+<p>4. Execute the image</p>
+
+<pre><code>docker run -d -e LICENSE=accept -e MQ_QMGR_NAME=QM1 -p 1414:1414 mq-docker
+</code></pre>
+
+<p>You now have a running IBM MQ Broker with Intercept installed.</p>
+
+<h1>
+<a id="connection-details" class="anchor" href="#connection-details" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Connection details</h1>
+
+<p>The default configured connection details are:</p>
+
+<ul>
+<li>Host: <code>$(docker-machine ip)</code>
+</li>
+<li>Queue Manager: <code>QM1</code>
+</li>
+<li>Port: <code>1414</code>
+</li>
+<li>Channel: <code>SYSTEM.DEF.SVRCONN</code>
+</li>
+<li>Username: <code>alice</code>
+</li>
+<li>Password: <code>passw0rd</code>
+</li>
+<li>Queue: <code>sample</code>
+</li>
+</ul>
+
+<p>You should configure MQ transports used by IBM Rational Integration Tester to use <strong>Dynamic Queues</strong> in both <strong>Recording</strong> and <strong>Stubbing</strong> tabs to enable message interception.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mq-docker maintained by <a href="https://github.com/ibm-rtvs">ibm-rtvs</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
