@@ -27,7 +27,7 @@ You now have a running IBM MQ Broker with Intercept installed.
 #Connection details
 The default configured connection details are:
 
-* Host: ```$(docker-machine ip)```
+* Host: The hostname or ip address of the docker host. If you're using Docker Machine you can find this using ```$(docker-machine ip)```
 * Queue Manager: ```QM1```
 * Port: ```1414```
 * Channel: ```SYSTEM.DEF.SVRCONN```
