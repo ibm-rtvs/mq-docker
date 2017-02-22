@@ -15,7 +15,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 # Move the 32-bit exit into /opt/intercept/exits with the correct ownership and permissions
     mkdir -p /opt/intercept/exits && \
     cd /opt/intercept/exits && \
-    cp -t . /tmp/intercept/7.1-8.0/intercept_linux_x86 /tmp/intercept/7.1-8.0/intercept_linux_x86_r && \
+    cp -t . /tmp/intercept/7.1-9.0/intercept_linux_x86 /tmp/intercept/7.1-9.0/intercept_linux_x86_r && \
     mv intercept_linux_x86 intercept && \
     mv intercept_linux_x86_r intercept_r && \
     chown mqm:mqm intercept* && \
@@ -24,7 +24,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 # Move the 64-bit exit into /opt/intercept/exits with the correct ownership and permissions
     mkdir -p /opt/intercept/exits64 && \
     cd /opt/intercept/exits64 && \
-    cp -t . /tmp/intercept/7.1-8.0/intercept_linux_x86_64 /tmp/intercept/7.1-8.0/intercept_linux_x86_64_r && \
+    cp -t . /tmp/intercept/7.1-9.0/intercept_linux_x86_64 /tmp/intercept/7.1-9.0/intercept_linux_x86_64_r && \
     mv intercept_linux_x86_64 intercept && \
     mv intercept_linux_x86_64_r intercept_r && \
     chown mqm:mqm intercept* && \
