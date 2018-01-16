@@ -30,7 +30,7 @@ The default configured connection details are:
 * Host: The hostname or ip address of the docker host. If you're using Docker Machine you can find this using ```$(docker-machine ip)```
 * Queue Manager: ```QM1```
 * Port: ```1414```
-* Channel: ```PSSWORD.SVRCONN```
+* Channel: ```PASSWORD.SVRCONN```
 * Username: ```alice```
 * Password: ```passw0rd```
 * Queue: ```sample```
