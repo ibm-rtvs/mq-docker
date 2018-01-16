@@ -36,6 +36,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     \
 # Inject into the container start script commands to append addendum_qm.ini to qm.ini and copy exits into the correct location.
 # Unless it happens here the files are either not present when the broker starts or later replaced.
-    sed -i 's#.*crtmqm.*#&\ncat /opt/intercept/addendum_qm.ini >> /var/mqm/qmgrs/${MQ_QMGR_NAME}/qm.ini\ncp /opt/intercept/exits/* /var/mqm/exits\ncp /opt/intercept/exits64/* /var/mqm/exits64#' /usr/local/bin/mq.sh
+    sed -i 's#.*crtmqm.*#&\ncat /opt/intercept/addendum_qm.ini >> /var/mqm/qmgrs/${MQ_QMGR_NAME}/qm.ini\ncp /opt/intercept/exits/* /var/mqm/exits\ncp /opt/intercept/exits64/* /var/mqm/exits64#' /usr/local/bin/mq-create-qmgr.sh
     
 COPY addendum_qm.ini /opt/intercept/
